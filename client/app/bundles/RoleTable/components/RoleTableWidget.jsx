@@ -6,6 +6,19 @@ export default class RoleTableWidget extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
+  pagination() {
+    const pagination = {
+      total: this.props.total,
+      showSizeChanger: true,
+      onShowSizeChange(current, pageSize) {
+        console.log("Current: ", current, ", pageSize: ", pageSize);
+      },
+      onChange(current) {
+        console.log("Change, current: ", current);
+      }
+    };
+    return pagination;
+  }
   render() {
     var columns = [{
       title: '名称',
@@ -23,7 +36,7 @@ export default class RoleTableWidget extends React.Component {
       )
     }];
     return (
-      <Table dataSource={this.props.dataSource} columns={columns} />
+      <Table dataSource={this.props.dataSource} columns={columns} pagination={this.pagination()} />
     );
   }
 }
