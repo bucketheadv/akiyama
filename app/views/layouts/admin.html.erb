@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Akiyama</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="react-content">
+      <%= render 'layouts/admin_header' %>
+    </div>
+    <div class="main-wrapper">
+      <aside class="aside-container">
+        <%= render 'layouts/admin_left' %>
+      </aside>
+      <section class="main-container">
+        <%= render 'layouts/message' %>
+        <%= yield %>
+      </section>
+    </div>
+  </body>
+</html>

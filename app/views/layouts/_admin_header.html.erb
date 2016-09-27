@@ -1,0 +1,19 @@
+<% if signed_in? %>
+  <% cache ["user_info_header", current_user.id, current_user.updated_at], expires_in: 10.minutes do %>
+    <%= react_component('AdminHeaderApp', props: {
+      title: '管理系统',
+      icon: 'appstore',
+      name: current_user.email,
+      aver: 'http://himg.bdimg.com/sys/portrait/item/113e68695f79696e6766656e67525e.jpg',
+      signed_in: true }) %>
+  <% end %>
+<% else %>
+  <% cache ["user_info_header"], expires_in: 10.minutes do %>
+    <%= react_component('AdminHeaderApp', props: {
+      title: '管理系统',
+      icon: 'appstore',
+      name: "游客",
+      aver: 'http://himg.bdimg.com/sys/portrait/item/113e68695f79696e6766656e67525e.jpg',
+      signed_in: false }) %>
+  <% end %>
+<% end %>

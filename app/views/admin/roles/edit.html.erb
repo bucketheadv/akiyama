@@ -1,0 +1,2 @@
+<h3 class="f-title">编辑角色</h3>
+<%= react_component('RoleFormApp', props: { authorities: AdminAuthorization::CONFIG , method: 'PUT', action: admin_role_path(@admin_role), csrf_token: session[:_csrf_token], role: @admin_role }) %>

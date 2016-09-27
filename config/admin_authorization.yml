@@ -1,0 +1,11 @@
+roles:
+  name: '角色与权限'
+  operations:
+    read: '查看'
+    create: '新建'
+    update: '更新'
+    destroy: '删除'
+posts:
+  name: '微博'
+  operations:
+    index: '查看所有'
