@@ -12,7 +12,7 @@ export default class AdminMenuWidget extends React.Component {
     };
   }
   handleClick(e) {
-    console.log('click ', e);
+    //console.log('click ', e);
   }
   dealMenuList(list) {
     var self = this;
@@ -29,14 +29,13 @@ export default class AdminMenuWidget extends React.Component {
       } else {
         return (
           <Menu.Item key={item.key}>
-            <a href={item.path}>{item.title}</a>
+            <a href={item.can ? item.key : ''}>{item.title}</a>
           </Menu.Item>
         );
       }
     });
   }
   dealMenuSelectedList(list, keys) {
-    console.log(JSON.stringify(keys));
     var self = this;
     if (!list) return ;
     var res;
@@ -64,7 +63,6 @@ export default class AdminMenuWidget extends React.Component {
     this.setState({
       open_keys: result[1]
     });
-    console.log(JSON.stringify(result));
   }
   render() {
     return (<Menu onClick={this.handleClick}

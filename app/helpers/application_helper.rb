@@ -14,10 +14,10 @@ module ApplicationHelper
         }, {
           title: '新建',
           key: new_admin_role_path,
-          can: true
+          can: false
         }]
       }, {
-        title: '呵呵',
+        title: '所有权限',
         key: admin_roles_path,
         can: true
       }]
