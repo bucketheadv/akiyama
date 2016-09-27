@@ -27,9 +27,10 @@ export default class AdminMenuWidget extends React.Component {
           {self.dealMenuList(item.items)}
         </SubMenu>);
       } else {
+        if(!item.can) return [];
         return (
           <Menu.Item key={item.key}>
-            <a href={item.can ? item.key : ''}>{item.title}</a>
+            <a href={item.key}>{item.title}</a>
           </Menu.Item>
         );
       }
