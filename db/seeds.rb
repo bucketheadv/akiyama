@@ -15,3 +15,7 @@ User.create([{
   email: 'test2@123.com',
   password: '123123123'
 }])
+
+10.times do |i|
+  Role.create(id: i + 2, name: "test_#{i}")
+end

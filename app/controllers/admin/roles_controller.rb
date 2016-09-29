@@ -1,7 +1,8 @@
 class Admin::RolesController < AdminController
   before_action :set_admin_role, only: [:show, :edit, :update, :destroy]
   def index
-    @admin_roles = Role.all
+    @count = params[:count] || 10
+    @admin_roles = Role.page(params[:page]).per(@count)
   end
 
   def new

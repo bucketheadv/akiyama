@@ -59,3 +59,5 @@ gem 'cancancan'
 
 gem 'config'
 gem 'rails_config'
+
+gem 'kaminari'

@@ -9,12 +9,15 @@ export default class RoleTableWidget extends React.Component {
   pagination() {
     const pagination = {
       total: this.props.total,
+      defaultPageSize: this.props.page_size,
+      current: this.props.current,
       showSizeChanger: false,
       onShowSizeChange(current, pageSize) {
         console.log("Current: ", current, ", pageSize: ", pageSize);
       },
       onChange(current) {
         console.log("Change, current: ", current);
+        window.location = "?page=" + current;
       }
     };
     return pagination;

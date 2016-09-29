@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def current_page
+    (params[:page] || 1).to_i
+  end
+
   def message_type(type)
     case type
     when 'notice'
@@ -9,6 +13,7 @@ module ApplicationHelper
       type
     end
   end
+
   def side_menu
     # items = [{
     #   title: '权限组',
