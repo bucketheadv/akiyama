@@ -13,10 +13,10 @@ export default class RoleTableWidget extends React.Component {
       current: this.props.current,
       showSizeChanger: false,
       onShowSizeChange(current, pageSize) {
-        console.log("Current: ", current, ", pageSize: ", pageSize);
+        //console.log("Current: ", current, ", pageSize: ", pageSize);
       },
       onChange(current) {
-        console.log("Change, current: ", current);
+        //console.log("Change, current: ", current);
         window.location = "?page=" + current;
       }
     };
