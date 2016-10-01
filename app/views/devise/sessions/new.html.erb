@@ -28,7 +28,5 @@
 <%= render "devise/shared/links" %>
 -->
 
-<div class=".ant-col-4">
-  <%= render 'layouts/message' %>
-  <%= react_component 'LoginFormApp', props: { csrf_token: session[:_csrf_token] } %>
-</div>
+<%= render 'layouts/message' %>
+<%= react_component 'LoginFormApp', props: { csrf_token: session[:_csrf_token] } %>
