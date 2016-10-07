@@ -47,6 +47,15 @@ module ApplicationHelper
         key: admin_roles_path,
         can: can?(:read, Role)
       }]
+    }, {
+      title: '用户',
+      key: 'users',
+      icon: 'user',
+      items: [{
+        title: '用户列表',
+        key: admin_users_path,
+        can: can?(:read, User)
+      }]
     }]
   end
 

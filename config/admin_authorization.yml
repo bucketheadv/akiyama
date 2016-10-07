@@ -5,7 +5,7 @@ roles:
     create: '新建'
     update: '更新'
     destroy: '删除'
-posts:
-  name: '微博'
+users:
+  name: '用户'
   operations:
-    index: '查看所有'
+    read: '查看'

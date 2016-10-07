@@ -17,6 +17,7 @@ const config = {
     './app/bundles/RoleTable/startup/RoleTableApp',
     './app/bundles/Alert/startup/AlertApp',
     './app/bundles/LoginForm/startup/LoginFormApp',
+    './app/bundles/CommonTable/startup/CommonTableApp',
     './app/bundles/Styles/style'
   ],
 

@@ -28,6 +28,7 @@ export default class AdminMenuWidget extends React.Component {
         </SubMenu>);
       } else {
         if(!item.can) return [];
+        let icon = item.icon ? <Icon type={item.icon} /> : '';
         return (
           <Menu.Item key={item.key}>
             <a href={item.key}>{item.title}</a>
