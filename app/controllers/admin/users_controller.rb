@@ -9,7 +9,7 @@ class Admin::UsersController < AdminController
 
   def new
     @user = User.new
-    @role_ids = []
+    @role_ids = @user.roles.pluck(:id)
   end
 
   def create
