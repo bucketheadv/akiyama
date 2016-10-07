@@ -18,6 +18,7 @@ const config = {
     './app/bundles/Alert/startup/AlertApp',
     './app/bundles/LoginForm/startup/LoginFormApp',
     './app/bundles/CommonTable/startup/CommonTableApp',
+    './app/bundles/UserForm/startup/UserFormApp',
     './app/bundles/Styles/style'
   ],
 

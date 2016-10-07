@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email, :admin, :created_at
+  attributes :id, :email, :admin, :created_at, :roles
 
   def admin
     object.admin? ? '是' : '否'

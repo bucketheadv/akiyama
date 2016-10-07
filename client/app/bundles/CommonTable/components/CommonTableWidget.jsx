@@ -31,7 +31,6 @@ export default class CommonTableWidget extends React.Component {
         </span>
       )
     };
-    console.log(this.props.columnNames);
     for (var i in this.props.columnNames) {
       let col = {
         title: this.props.columnNames[i],

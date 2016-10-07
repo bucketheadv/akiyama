@@ -39,7 +39,7 @@ class Admin::RolesController < AdminController
     content_params = params[:role][:content]
     permit_params = nil
     permit_params = content_params.map do |k, v|
-      { "#{k}" => v.keys }
+      { k => v.keys }
     end if content_params.present?
     # params.require(:role).permit(:name, content: params[:role][:content].try(:keys)
     params.require(:role).permit(:name, content: permit_params )
