@@ -14,7 +14,6 @@ export default class LoginFormWidget extends React.Component {
     console.log('submit login');
   }
   render() {
-    console.log('heheda');
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 }
