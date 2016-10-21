@@ -9,7 +9,8 @@
 User.create([{
   id: 1,
   email: 'test1@123.com',
-  password: '123123123'
+  password: '123123123',
+  admin: true
 },{
   id: 2,
   email: 'test2@123.com',

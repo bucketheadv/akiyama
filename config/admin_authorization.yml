@@ -9,3 +9,4 @@ users:
   name: '用户'
   operations:
     read: '查看'
+    dashboard: '面板'
