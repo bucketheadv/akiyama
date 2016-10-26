@@ -14,8 +14,8 @@ class Admin::UsersController < AdminController
 
   def create
     @user = User.new(user_params)
+    @user.build_roles(role_ids)
     if @user.save
-      @user.save_roles(role_ids)
       flash[:success] = 'User saved.'
       redirect_to admin_users_path
     else
@@ -30,8 +30,8 @@ class Admin::UsersController < AdminController
   end
 
   def update
+    @user.build_roles(role_ids)
     if @user.update(user_params)
-      @user.save_roles(role_ids)
       flash[:success] = 'User updated.'
       redirect_to admin_users_path
     else
