@@ -1,6 +1,5 @@
 class Admin::RolesController < AdminController
   before_action :set_admin_role, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
   def index
     @count = params[:count] || 10
     @admin_roles = Role.page(params[:page]).per(@count)
@@ -32,6 +31,12 @@ class Admin::RolesController < AdminController
       flash.now[:error] = @admin_role.errors.full_messages[0]
       render :edit
     end
+  end
+
+  def destroy
+    @admin_role.destroy
+    flash[:success] = '删除成功'
+    redirect_to admin_roles_path
   end
 
   private
