@@ -3,7 +3,7 @@ class Admin::UsersController < AdminController
   before_action :set_roles, only: [:edit, :update, :new, :create]
   def index
     @count = params[:count] || 10
-    @users = User.page(params[:page]).per(@count)
+    @users = User.where("email LIKE ?", "%#{params[:q]}%").page(params[:page]).per(@count)
     @dataSource = ActiveModel::Serializer::CollectionSerializer.new(@users, each_serializer:UserSerializer)
   end
 

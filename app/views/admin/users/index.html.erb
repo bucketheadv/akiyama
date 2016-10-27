@@ -1,6 +1,11 @@
 <h3 class="f-title">所有用户
   <%= link_to '新建用户', new_admin_user_path %>
 </h3>
+<%= react_component('SearchFormApp', props: {
+  action: admin_users_path,
+  default: params[:q],
+  style: { width: 200, marginTop: 20, marginLeft: 10 }
+})%>
 <%= react_component('CommonTableApp', props: {
   dataSource: @dataSource,
   total: @users.total_count,
