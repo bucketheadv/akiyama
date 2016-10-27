@@ -19,6 +19,7 @@ const config = {
     './app/bundles/CommonTable/startup/CommonTableApp',
     './app/bundles/UserForm/startup/UserFormApp',
     './app/bundles/SearchForm/startup/SearchFormApp',
+    './app/bundles/MyInfoForm/startup/MyInfoFormApp',
     './app/bundles/Styles/style'
   ],
 

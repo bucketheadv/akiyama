@@ -12,6 +12,9 @@ export default class AdminHeaderWidget extends React.Component {
     const menu = (
       <Menu>
         <Menu.Item>
+          <a href="/users/edit">编辑</a>
+        </Menu.Item>
+        <Menu.Item>
           <a href="/users/sign_out" data-method="delete">注销</a>
         </Menu.Item>
       </Menu>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'hello_world', to: 'hello_world#index'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
   root 'admin/roles#index'
 
   namespace :admin do

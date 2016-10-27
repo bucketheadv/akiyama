@@ -6,5 +6,7 @@ zh-CN:
       user:
         email: '邮箱'
         admin: '管理员'
+        password: '密码'
+        password_confirmation: '确认密码'
         created_at: '创建时间'
         updated_at: '最后更新'
