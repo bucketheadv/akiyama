@@ -41,6 +41,17 @@ class Admin::UsersController < AdminController
     end
   end
 
+  def update_password
+    if current_user.update(password_params)
+      flash[:notice] = '密码更新成功，请重新登录'
+      redirect_to new_user_session_path
+    else
+      flash[:error] = current_user.errors.full_messages.first
+      redirect_to edit_user_registration_path(tab: '2')
+    end
+  end
+
+
   def destroy
     @user.destroy
     flash[:success] = 'User destroyed.'
@@ -57,7 +68,11 @@ class Admin::UsersController < AdminController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :admin)
+    params.require(:user).permit(:email, :admin)
+  end
+
+  def password_params
+    params.require(:user).permit(:password, :password_confirmation)
   end
 
   def role_ids

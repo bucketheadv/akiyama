@@ -23,20 +23,9 @@ export default class MyInfoFormWidget extends React.Component {
             label="邮箱">
             <Input name="user[email]" type="text" defaultValue={this.props.user.email} />
           </FormItem>
-          <FormItem
-            {...formItemLayout}
-            label="密码">
-            <Input name="user[password]" type="password" defaultValue={this.props.user.password} placeholder="密码最少为6位" />
-          </FormItem>
-          <FormItem
-            {...formItemLayout}
-            label="确认密码">
-            <Input name="user[password_confirmation]" type="password" defaultValue={this.props.user.password_confirmation} placeholder="必须与密码一致" />
-          </FormItem>
           <FormItem wrapperCol={{ span: 16, offset: 3 }} style={{ marginTop: 24 }}>
             <Button type="primary" htmlType="submit">更新</Button>
           </FormItem>
-
           <FormItem
             {...formItemLayout}
             label="不高兴?">

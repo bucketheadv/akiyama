@@ -21,8 +21,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     if current_user.update(user_params)
-      flash[:notice] = '更新成功, 请重新登录'
-      redirect_to new_user_session_path
+      flash[:notice] = '更新成功'
+      redirect_back fallback_location: '/admin/users'
     else
       flash[:error] = current_user.errors.full_messages.first
       super
@@ -46,7 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

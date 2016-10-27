@@ -49,5 +49,6 @@
   user: current_user,
   action: user_registration_path,
   method: 'PUT',
+  tab: params[:tab] || '1',
   csrf_token: session[:_csrf_token]
 }) %>
