@@ -47,6 +47,7 @@
     "webpack": "^1.12.14"
   },
   "devDependencies": {
+    "babel-plugin-antd": "^0.5.1",
     "babel-plugin-import": "^1.0.0"
   }
 }
