@@ -24,8 +24,7 @@ export default class RoleFormWidget extends React.Component {
     for (var i in authorities) {
       var role = authorities[i];
       ret.push(
-        <FormItem key={i} wrapperCol={{ span: 16, offset: 3}} style={{marginBottom: 10}}>
-          <span style={{width:50}}>{role.name}:&nbsp;&nbsp;</span>
+        <FormItem label={role.name} {...this.formItemLayout()} key={i} style={{marginBottom: 10}}>
           {self.generateCheckbox(i, role, has_authorities)}
         </FormItem>
       )
@@ -58,11 +57,13 @@ export default class RoleFormWidget extends React.Component {
     }
     return flag;
   }
-  render() {
-    const formItemLayout = {
+  formItemLayout() {
+    return {
       labelCol: { span: 3 },
-      wrapperCol: { span: 14 },
-    };
+      wrapperCol: { span: 14 }
+    }
+  }
+  render() {
     return (
       <div className="featureItem">
         <Form name="role" action={this.props.action} method='POST' horizontal onSubmit={this.handleSubmit}>
@@ -70,7 +71,7 @@ export default class RoleFormWidget extends React.Component {
           <Input name="_method" type="hidden" value={this.props.method} />
           <Input name="authenticity_token" type="hidden" value={this.props.csrf_token} />
           <FormItem
-            {...formItemLayout}
+            {...this.formItemLayout()}
             label='名称'
             >
             <Input name="role[name]" defaultValue={this.state.role.name} type="text" placeholder="请输入名称" />
