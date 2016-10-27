@@ -2,7 +2,7 @@ class Admin::RolesController < AdminController
   before_action :set_admin_role, only: [:show, :edit, :update, :destroy]
   def index
     @count = params[:count] || 10
-    @admin_roles = Role.page(params[:page]).per(@count)
+    @admin_roles = Role.where("name LIKE ?", "%#{params[:q]}%").page(params[:page]).per(@count)
   end
 
   def new

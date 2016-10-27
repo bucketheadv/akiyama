@@ -1,6 +1,11 @@
 <h3 class="f-title">所有角色
   <%= link_to '新建角色', new_admin_role_path %>
 </h3>
+<%= react_component('SearchFormApp', props: {
+  action: admin_roles_path,
+  default: params[:q],
+  style: { width: 200, marginTop: 20, marginLeft: 10 }
+})%>
 <%= react_component('RoleTableApp',
   props: {
     dataSource: @admin_roles,
