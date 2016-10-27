@@ -7,7 +7,7 @@ export default class SearchFormWidget extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.default,
+      value: this.props.default || '',
       focus: false
     }
   }
