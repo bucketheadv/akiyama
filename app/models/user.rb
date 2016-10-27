@@ -23,8 +23,10 @@ class User < ApplicationRecord
     end
     attrs += (role_ids.map(&:to_i) - not_exists.pluck(:id)).map do |r_id|
       r = self.user_role_relations.find_or_initialize_by(role_id: r_id)
-      { id: r.id, role_id: r_id }
+      if !r
+        { role_id: r_id }
+      end
     end
-    self.assign_attributes(user_role_relations_attributes: attrs)
+    self.assign_attributes(user_role_relations_attributes: attrs.compact)
   end
 end
