@@ -14,7 +14,6 @@ const config = {
     './app/bundles/AdminHeader/startup/AdminHeaderApp',
     './app/bundles/AdminMenu/startup/AdminMenuApp',
     './app/bundles/RoleForm/startup/RoleFormApp',
-    './app/bundles/RoleTable/startup/RoleTableApp',
     './app/bundles/Alert/startup/AlertApp',
     './app/bundles/LoginForm/startup/LoginFormApp',
     './app/bundles/CommonTable/startup/CommonTableApp',

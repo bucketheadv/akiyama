@@ -6,11 +6,13 @@
   default: params[:q],
   style: { width: 200, marginTop: 20, marginLeft: 10 }
 })%>
-<%= react_component('RoleTableApp',
+<%= react_component('CommonTableApp',
   props: {
     dataSource: @admin_roles,
     total: @admin_roles.total_count,
     page_size: @count,
-    current: current_page
+    current: current_page,
+    type: 'roles',
+    columnNames: Role.table_attrs
   }
 ) %>
