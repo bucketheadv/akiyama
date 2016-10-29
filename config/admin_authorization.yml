@@ -10,3 +10,6 @@ users:
   operations:
     read: '查看'
     dashboard: '面板'
+    create: '新建'
+    update: '更新'
+    destroy: '删除'
