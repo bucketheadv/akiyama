@@ -12,17 +12,22 @@ export default class MyInfoForm extends React.Component {
   }
 
   handleTab(e) {
-    window.location = `?tab=${e}`
+    window.location = `#${e}`
   }
 
   render() {
     //return <MyInfoFormWidget {...this.props} />;
+    let point = window.location.hash.slice(1)
+    console.log(point);
+    if(point == undefined || point.trim() == '') {
+      point = 'userInfo'
+    }
     return (
-      <Tabs defaultActiveKey={this.props.tab} onTabClick={this.handleTab}>
-        <TabPane tab={<span><Icon type="apple"/>个人信息</span>} key="1" >
+      <Tabs defaultActiveKey={point} onTabClick={this.handleTab}>
+        <TabPane tab={<span><Icon type="apple"/>个人信息</span>} key="userInfo" >
           <MyInfoFormWidget {...this.props} />
         </TabPane>
-        <TabPane tab={<span><Icon type="android"/>密码</span>} key="2" >
+        <TabPane tab={<span><Icon type="android"/>密码</span>} key="pswdInfo" >
           <PasswordFormWidget {...this.props} />
         </TabPane>
       </Tabs>
