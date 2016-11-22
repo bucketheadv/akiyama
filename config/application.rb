@@ -15,6 +15,7 @@ module Akiyama
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.yml")]
     config.generators do |g|
       g.helper false
+      g.assets false
     end
   end
 end
