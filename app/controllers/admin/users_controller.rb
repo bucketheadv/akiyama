@@ -16,7 +16,7 @@ class Admin::UsersController < AdminController
     @user = User.new(user_params)
     @user.build_roles(role_ids)
     if @user.save
-      flash[:success] = 'User saved.'
+      flash[:success] = '用户已保存.'
       redirect_to admin_users_path
     else
       @role_ids = role_ids.map(&:to_i)
@@ -32,7 +32,7 @@ class Admin::UsersController < AdminController
   def update
     @user.build_roles(role_ids)
     if @user.update(user_params)
-      flash[:success] = 'User updated.'
+      flash[:success] = '用户已更新.'
       redirect_to admin_users_path
     else
       @role_ids = role_ids.map(&:to_i)
@@ -54,7 +54,7 @@ class Admin::UsersController < AdminController
 
   def destroy
     @user.destroy
-    flash[:success] = 'User destroyed.'
+    flash[:success] = '用户已删除.'
     redirect_to admin_users_path
   end
 
