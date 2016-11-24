@@ -2,8 +2,8 @@
   "presets": ["es2015", "stage-0", "react"],
   "plugins": [
     ["antd", {
-      style: true,
-      libraryName: "antd"
+      "style": true,
+      "libraryName": "antd"
     }]
   ]
 }
