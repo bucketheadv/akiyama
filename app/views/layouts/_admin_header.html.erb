@@ -7,7 +7,7 @@
       aver: 'http://himg.bdimg.com/sys/portrait/item/113e68695f79696e6766656e67525e.jpg',
       signed_in: true }) %>
   <% end %>
-<% else %>
+<!-- <% else %>
   <% cache ["user_info_header"], expires_in: 10.minutes do %>
     <%= react_component('AdminHeaderApp', props: {
       title: '管理系统',
@@ -15,5 +15,5 @@
       name: "游客",
       aver: 'http://himg.bdimg.com/sys/portrait/item/113e68695f79696e6766656e67525e.jpg',
       signed_in: false }) %>
-  <% end %>
+  <% end %> -->
 <% end %>
